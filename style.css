@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 body {
-    background-color: #22222a;
-    color: #ffffff;
+    background-color: #dadada;
+    color: #1a1818;
 
     font-family: Roboto;
-    font-size: 36px;
+    font-size: 24px;
     line-height: 1.25;
 
     min-height: calc( 3000px + 100vh );
