@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+body {
+    background-color: #22222a;
+    color: #ffffff;
+
+    font-family: Roboto;
+    font-size: 36px;
+    line-height: 1.25;
+
+    min-height: calc( 3000px + 100vh );
+}
+
+section.book {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+section.content {
+    width: 50%;
+    max-width: 600px;
+    padding: 32px;
+
+    position: relative;
+    z-index: 1;
+}
+
+section.content h1 {
+    margin-bottom: 32px;
+}
+
+section.content p {
+    margin-bottom: 256px;
+}
+
+section.content li {
+    margin-bottom: 32px;
+    padding-left: 48px;
+    position: relative;
+}
+
+section.content li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
