@@ -44,9 +44,10 @@ function animate() {
     currentTimeline += (aimTimeline - currentTimeline) * 0.05
     
     const rx = currentTimeline * -0.5 + 0.5
-    const rz = (currentTimeline * 0.9 + 0.1) * Math.PI * 2
+    const ry = (currentTimeline * 0.9 + 0.1) * Math.PI * 2
+    const rz = currentTimeline * -0.5 + 0.5
 
-    cube.rotation.set(rx, 0, rz)
+    cube.rotation.set(rx, ry, rz)
 
 	renderer.render( scene, camera );
 }
