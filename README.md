@@ -1,8 +1,10 @@
 -------------------------------------
-getLife Prototype
+getLife Thesis
 -------------------------------------
 
-The Prototype is hosted online. 
+This is the thesis book for Master in Interaction Design, Domus Academy Milano. (Uploaded in December, 2021)
+
+The Prototype for the thesis is hosted online. 
 
 https://sohamdasdesigns.github.io/getLife/
 
@@ -10,7 +12,7 @@ As Mobile First approach taken (with QR Code) to make the information sharing mo
 
 -------------------------------------
 
-Thesis Prototype
+Thesis Book
 | Soham Das 
 | MID, Feb 2021
 | Domus Academy Milano
