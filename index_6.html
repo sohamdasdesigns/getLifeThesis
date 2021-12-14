@@ -7,11 +7,10 @@
 <section class="content">
 <h1>getLife : Prototype</h1>
 
-<p>prototype</p>
+<p></p>
 
 <h2>Click here to experience the getLife Trainer Prototype</h2>
-<h2>v</h2>
-<h1><a href="https://sohamdasdesigns.github.io/getLife">Getlife Prototype</a></h1>
+<h1><a href="https://sohamdasdesigns.github.io/getLife">getLife Prototype</a></h1>
 
 <br>
 <br>
@@ -25,8 +24,34 @@
         html | css | javascript</li>
     <li>Visual Communication<br>
         Figma | Photoshop</li>
-    
 </ul>
+
+<br>
+<br>
+
+<h2>Development</h2>
+
+<br>
+
+<h3>Development of the prototype started with the Idea of using Kinect functionalities to gather high level body gesture data and Some form of interface to portray the analysed data to communicate the user with ease and in a swift manner. 
+    As from the interview insights were directing, while working out with increased cardiac and body functions, trainees tend to focus more on their physical fucntions rather than their cognitive ones. So, deta visualisation of exercizes needed to be in its simplest form. 
+</h3>
+<h3>
+    With further research and exploration on Human pose estimation, the best option for human pose detection resulted to be using Tensorflow with its library for handling GPU-accelerated mathematical operations and memory management for machine learning algorithms, and ml5.js with immediate access in the browser to pre-trained models human pose detection.
+    On top of the fucntionalities, the ml.js libraries were integrated to p5.js to make the user interface prototype. 
+</h3>
+<h3>
+    In p5.js after integrating the body tracking functionalities to separately get the position data of body joints, the next step was to interpret the data for a simple workout routine to check if the body gesture or movement was progressing in the correct way or not by the user.
+    A simple routine of moving one hand to a 90 degrees angle with the body was decided and corresponding developemt in mapping for the three body joints, 1. Left shoulder, 2. Right Shoulder, 3. Right Elbow, were done in p5.js sketch.
+</h3>
+<h3>
+    Later, few interactive elements, 1. Progress bar & 2. Skeleton width were added to the interface to portray the users their progress towards the goal. As it is a rehabilitation program, each small movement with their body (in this case, if the user is injured in their righht shoulder, then lifting their hand to the 90 degrees would be much difficult and painful in general). 
+    For that reason, the skeleton width would portray the strain the users are feeling in their bodies (as the skeleton lines stays yellow but width gets increased as they progress towards their goal) and when they reach their goal it turns green and maximum width, to portray thay have overcome their difficulty and reach their goal. Which would motivate the injured user to go through 
+    the next repetition, as they are already self motivated and feel in their own mind that they can overcome their own physical adversity, which is the main purpose of the getlife as a solution.
+</h3>
+
+
+
 
 
 
