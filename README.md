@@ -9,8 +9,8 @@ As Mobile First approach taken (with QR Code) to make the information sharing mo
 -------------------------------------
 
 Thesis Prototype
-Soham Das 
-MID, Feb 2021
-Domus Academy Milano
+| Soham Das 
+| MID, Feb 2021
+| Domus Academy Milano
 
 -------------------------------------
