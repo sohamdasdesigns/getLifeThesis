@@ -50,7 +50,7 @@ function animate() {
     const rx = currentTimeline * -0.5 + 0.5
     const rz = (currentTimeline * 0.9 + 0.1) * Math.PI * 2
 
-    cube.rotation.set(rx, 0, rz)
+    cube.rotation.set(rx, -rx * 2, rz)
 
 	renderer.render( scene, camera );
 }

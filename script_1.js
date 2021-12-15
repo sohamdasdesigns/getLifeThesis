@@ -27,7 +27,9 @@ const urls = [
 const geometry = new THREE.BoxGeometry(3.5, 5, 0.5);
 const materials = urls.map(url => {
     return new THREE.MeshLambertMaterial( { 
-    map: loader.load(url)
+    map: loader.load(url),
+    transparent: true,
+    opacity: 0.85,
     })
 } );
 const cube = new THREE.Mesh( geometry, materials );
