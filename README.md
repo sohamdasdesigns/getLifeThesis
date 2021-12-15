@@ -5,8 +5,9 @@ getLife Thesis
 This is the thesis book for Master in Interaction Design, Domus Academy Milano. (Uploaded in December, 2021)
 
 <div class="url_github">
-  <a href="https://sohamdasdesigns.github.io/getLifeThesis/" style="_blank">https://sohamdasdesigns.github.io/getLifeThesis/</a>  
+  <a href="https://sohamdasdesigns.github.io/getLifeThesis/" style="_blank">thesis/</a>  
 </div>
+
 
 The Prototype for the thesis is hosted online. 
 
