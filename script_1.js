@@ -37,6 +37,18 @@ scene.add( cube );
 
 camera.position.z = 6;
 
+if (window.matchMedia("(max-width: 767px)").matches)
+{
+    camera.position.z = 6;
+    console.log('mobile');
+}
+else {
+    camera.position.z = 10;
+    camera.position.x = -2;
+    camera.position.y = -2;
+    console.log('pc')
+}
+
 let currentTimeline = window.pageYOffset / 3000
 let aimTimeline = window.pageYOffset / 3000
 
@@ -48,7 +60,7 @@ function animate() {
     const rx = currentTimeline * -0.5 + 0.5
     const ry = (currentTimeline * 0.9 + 0.1) * Math.PI * 2
 
-    cube.rotation.set(rx, ry, 0)
+    cube.rotation.set(rx, ry * -1.5, 0)
 
 	renderer.render( scene, camera );
 }
