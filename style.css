@@ -10,6 +10,8 @@ body {
     line-height: 1.25;
 
     min-height: calc( 3000px + 100vh );
+
+    text-shadow: 2px 6px 10px rgba(255,255,255,0.6);
 }
 
 section.book {

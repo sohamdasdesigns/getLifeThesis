@@ -29,25 +29,13 @@ const materials = urls.map(url => {
     return new THREE.MeshLambertMaterial( { 
     map: loader.load(url),
     transparent: true,
-    opacity: 0.85,
+    opacity: 0.5,
     })
 } );
 const cube = new THREE.Mesh( geometry, materials );
 scene.add( cube );
 
 camera.position.z = 6;
-
-if (window.matchMedia("(max-width: 767px)").matches)
-{
-    camera.position.z = 10;
-    camera.position.x = -2;
-    camera.position.y = -2;
-    
-}
-else {
-    camera.position.z = 6;
-    
-}
 
 let currentTimeline = window.pageYOffset / 3000
 let aimTimeline = window.pageYOffset / 3000
