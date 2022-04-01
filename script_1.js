@@ -39,14 +39,14 @@ camera.position.z = 6;
 
 if (window.matchMedia("(max-width: 767px)").matches)
 {
-    camera.position.z = 6;
-    console.log('mobile');
-}
-else {
     camera.position.z = 10;
     camera.position.x = -2;
     camera.position.y = -2;
-    console.log('pc')
+    
+}
+else {
+    camera.position.z = 6;
+    
 }
 
 let currentTimeline = window.pageYOffset / 3000
