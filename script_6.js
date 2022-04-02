@@ -29,7 +29,7 @@ const materials = urls.map(url => {
     return new THREE.MeshLambertMaterial( { 
     map: loader.load(url),
     transparent: true,
-    opacity: 0.5,
+    opacity: 0.45,
     })
 } );
 const cube = new THREE.Mesh( geometry, materials );
