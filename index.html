@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Soham Das - DA Milano - Master`s Thesis Project</title>
+<link rel="icon" type="image/png" href="static/DA_favicon.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+
+:root{
+    --paper:#f8f5ef;
+    --ink:#1f1f1f;
+    --line:#d9d3c8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+section[id]{
+    scroll-margin-top:100px;
+}
+
+body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"EB Garamond", serif;
+    line-height:1.9;
+    font-size:20px;
+}
+
+main{
+    width:min(760px,90%);
+    margin:auto;
+    padding:150px 0 120px;
+}
+
+/* ---------------------- */
+/* Fixed Title Bar */
+/* ---------------------- */
+
+.titlebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:74px;
+    background:rgba(248,245,239,.92);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    z-index:100;
+    display:flex;
+    align-items:center;
+}
+
+.titlebar-inner{
+    width:100%;
+    padding:0 40px;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:20px;
+}
+
+.titlebar-logos{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.titlebar-logos img{
+    height:26px;
+    width:auto;
+    display:block;
+}
+
+.titlebar-logos img.da-logo{
+    height:22px;
+}
+
+.titlebar-logos .divider{
+    width:1px;
+    height:28px;
+    background:var(--line);
+}
+
+.titlebar-title{
+    text-align:center;
+    font-size:.95rem;
+    letter-spacing:.08em;
+    white-space:nowrap;
+    opacity:.85;
+}
+
+.titlebar-spacer{
+    width:100%;
+}
+
+@media(max-width:900px){
+    .titlebar-title{
+        display:none;
+    }
+    .titlebar-inner{
+        grid-template-columns:auto 1fr;
+    }
+    .titlebar-spacer{
+        display:none;
+    }
+}
+
+@media(max-width:700px){
+    .titlebar{
+        height:auto;
+        padding:14px 0;
+    }
+    .titlebar-inner{
+        grid-template-columns:1fr;
+        gap:12px;
+        text-align:center;
+    }
+    .titlebar-logos{
+        justify-content:center;
+    }
+    main{
+        padding-top:160px;
+    }
+}
+
+hr{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:80px 0;
+}
+
+/* ---------------------- */
+/* Typography */
+/* ---------------------- */
+
+h1{
+    font-size:clamp(3rem,7vw,5rem);
+    font-weight:500;
+    line-height:1;
+    margin-bottom:24px;
+}
+
+h2{
+    font-size:2.2rem;
+    font-weight:500;
+    margin-bottom:28px;
+}
+
+h3{
+    font-size:1.4rem;
+    font-weight:600;
+    margin-bottom:16px;
+    margin-top:36px;
+}
+
+h3:first-of-type{
+    margin-top:0;
+}
+
+.section-number{
+    display:block;
+    font-size:.85rem;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    opacity:.65;
+}
+
+.eyebrow{
+    display:block;
+    font-size:.85rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    opacity:.6;
+    margin-bottom:6px;
+}
+
+p{
+    margin-bottom:28px;
+}
+
+.lead{
+    font-size:1.35rem;
+    max-width:650px;
+}
+
+.meta{
+    margin-top:40px;
+    font-size:1.05rem;
+    color:#555;
+}
+
+.meta p{
+    margin-bottom:6px;
+}
+
+.contents{
+    list-style:none;
+}
+
+.contents li{
+    padding:8px 0;
+    font-size:1.2rem;
+}
+
+ul.plain, ol.plain{
+    list-style:none;
+    margin-bottom:28px;
+}
+
+ul.plain li, ol.plain li{
+    padding:6px 0;
+    padding-left:1.3em;
+    position:relative;
+}
+
+ul.plain li::before{
+    content:"-";
+    position:absolute;
+    left:0;
+    opacity:.5;
+}
+
+ol.plain{
+    counter-reset:step;
+}
+
+ol.plain li::before{
+    counter-increment:step;
+    content:counter(step) ".";
+    position:absolute;
+    left:0;
+    opacity:.6;
+    font-style:italic;
+}
+
+.tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 14px;
+    margin-bottom:28px;
+    list-style:none;
+}
+
+.tag-list li{
+    border:1px solid var(--line);
+    padding:6px 16px;
+    font-size:1rem;
+    border-radius:2px;
+}
+
+blockquote{
+    border-left:2px solid var(--line);
+    padding:6px 0 6px 28px;
+    margin:0 0 12px 0;
+    font-style:italic;
+    font-size:1.2rem;
+    max-width:650px;
+}
+
+.attribution{
+    display:block;
+    font-style:normal;
+    font-size:.85rem;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    opacity:.6;
+    margin-bottom:40px;
+}
+
+.subsection{
+    margin-bottom:44px;
+}
+
+.subsection:last-child{
+    margin-bottom:0;
+}
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px 60px;
+}
+
+.stat-word{
+    font-size:1.15rem;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.step-block{
+    margin-bottom:44px;
+    padding-bottom:44px;
+    border-bottom:1px solid var(--line);
+}
+
+.step-block:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+    margin-bottom:0;
+}
+
+.step-block h3{
+    margin-top:0;
+}
+
+figure{
+    margin-bottom:50px;
+}
+
+.placeholder{
+    border:1px solid var(--line);
+    aspect-ratio:16/9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:14px;
+    font-size:1rem;
+    color:#777;
+    text-align:center;
+    padding:20px;
+}
+
+figcaption{
+    font-size:1rem;
+    color:#555;
+}
+
+footer{
+    text-align:center;
+    font-size:1rem;
+    color:#666;
+    padding-top:20px;
+}
+
+/* ---------------------- */
+/* Side Navigation */
+/* ---------------------- */
+
+.side-nav{
+    position:fixed;
+    top:50%;
+    left:40px;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    z-index:90;
+}
+
+.side-nav a{
+    font-size:.78rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--ink);
+    text-decoration:none;
+    opacity:.5;
+    transition:opacity .15s ease, padding-left .15s ease, border-left-color .15s ease;
+    white-space:nowrap;
+    border-left:1px solid transparent;
+    padding-left:12px;
+}
+
+.side-nav a:hover,
+.side-nav a.active{
+    opacity:1;
+    border-left:1px solid var(--ink);
+}
+
+@media(max-width:1180px){
+    .side-nav{
+        display:none;
+    }
+}
+
+@media(max-width:700px){
+
+/* Mobile overrides */
+body{
+    font-size:18px;
+}
+
+main{
+    padding:50px 0 80px;
+}
+
+hr{
+    margin:60px 0;
+}
+
+h2{
+    font-size:1.8rem;
+}
+
+.two-col{
+    grid-template-columns:1fr;
+    gap:24px;
+}
+
+}
+
+
+
+.image-grid{display:grid;gap:16px}
+
+/* ---------- Thesis Images ---------- */
+
+
+
+.image-caption{
+    font-size:.95rem;
+    color:#666;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.image-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:30px;
+    margin:40px 0;
+}
+
+@media(min-width:900px){
+
+.image-row.two{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
+
+
+/* ---------- Thesis Images ---------- */
+.thesis-image{
+    width:80%;
+    max-width:800px;
+    height:auto;
+    display:block;
+    margin:28px auto 10px;
+    border:1px solid var(--line);
+}
+.thesis-image.ai-image{
+    width:50%;
+}
+.project-link{
+    font-size:1.15rem;
+    margin:0 0 14px;
+}
+.project-link a{
+    color:#0d8da8;
+    text-decoration:underline;
+}
+.project-link-description{
+    font-size:1rem;
+    margin:0 0 6px;
+    color:var(--ink);
+}
+.solution-logo{
+    text-align:left;
+    margin:20px 0 30px;
+}
+.solution-logo-img{
+    max-width:125px;
+    width:50%;
+    height:auto;
+    display:inline-block;
+}
+#bibliography a{
+    color:inherit;
+    text-decoration:underline;
+}
+.image-caption{
+    display:block;
+    max-width:80%;
+    margin:0 auto 40px;
+    font-size:.95rem;
+    color:#666;
+    text-align:center;
+}
+.image-grid{
+    display:grid;
+    gap:16px;
+}
+.image-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:30px;
+    margin:40px 0;
+}
+.subsection figure{
+    margin:40px 0;
+}
+.subsection figure img{
+    width:80%;
+    display:block;
+    margin:0 auto;
+}
+.step-block figure{
+    margin-top:35px;
+}
+@media(min-width:900px){
+    .image-row.two{
+        grid-template-columns:1fr 1fr;
+    }
+}
+.img-zoom-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:9999;
+}
+.img-zoom-overlay.visible{
+    display:flex;
+}
+.img-zoom-content{
+    position:relative;
+    max-width:100%;
+    max-height:100%;
+}
+.img-zoom-img{
+    max-width:90vw;
+    max-height:90vh;
+    display:block;
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+.img-zoom-close{
+    position:absolute;
+    top:-12px;
+    right:-12px;
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:50%;
+    background:#0d8da8;
+    color:#fff;
+    font-size:1.3rem;
+    line-height:1;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+<div class="img-zoom-overlay" id="imgZoomOverlay" aria-hidden="true">
+    <div class="img-zoom-content">
+        <button class="img-zoom-close" id="imgZoomClose" aria-label="Close zoomed image">×</button>
+        <img class="img-zoom-img" id="imgZoomImg" src="" alt=""/>
+    </div>
+</div>
+<div class="titlebar">
+<div class="titlebar-inner">
+<div class="titlebar-logos">
+<img alt="Domus Academy Milano" class="da-logo" src="static/DAlogo_wordmark_transparent_black.png"/>
+<div class="divider"></div>
+<img alt="Technogym" src="static/Technogym_Logo_svg.webp"/>
+</div>
+<div class="titlebar-title">Master's Thesis Project · Experience Design</div>
+<div class="titlebar-spacer"></div>
+</div>
+</div>
+<a id="top"></a>
+<nav class="side-nav">
+<a href="#top">TITLE</a>
+<a href="#research">Research</a>
+<a href="#research-insights">Design Challenge</a>
+<a href="#solution">Solution</a>
+<a href="#experience">The Experience</a>
+<a href="#prototype">Prototype</a>
+<a href="#bibliography">Bibliography</a>
+</nav>
+<main>
+<header>
+<span class="eyebrow">Master's Thesis Project · Experience Design</span>
+<h1>getLife</h1>
+<p class="lead">
+A coaching solution that supports the idea of hybrid wellbeing through a holistic wellness approach. For helping the people recovering from injury, to rehabilitate themselves at their own pace, within the comfort of their home.
+</p>
+<div class="meta">
+<p><strong>Project Leaders</strong> - Michele Aquila, Laura Polazzi</p>
+<p><strong>Interaction Designer</strong> - Soham Das</p>
+<p>Master in Interaction Design, February 2021 · Domus Academy Milano, Italy</p>
+</div>
+</header>
+<hr/>
+<section>
+<span class="section-number">Brief</span>
+<h2>Designing for hybrid wellbeing</h2>
+<p class="lead">
+To design a coaching solution that supports the idea of hybrid through a holistic wellness approach.
+</p>
+</section>
+<hr/>
+<section>
+<span class="section-number">Focus</span>
+<h2>Sustaining behavioral change</h2>
+<p>
+To achieve a sustainable behavioral change for the people who are currently dealing with injury or have a history of injury.
+</p>
+</section>
+<hr/>
+<section>
+<span class="section-number">Abstract</span>
+<h2>What is getLife</h2>
+<p>
+getLife is a support system for people who are going through physical injury or have a history of physical injury. It is an ecosystem consisting of technology and people, to serve the people with injury - to motivate and rehabilitate themselves through their difficult times towards their overall physical, mental and social well-being, within the comfortable and private space of their home.
+</p>
+<p>
+In this ecosystem, with the help of a human coach/physiotherapist, an AI Coach, and computer vision, trainees train machine learning algorithms to align their particular injuries with the most appropriate workout routines. With the help of their AI Coach they rehabilitate themselves at their own pace, comparing themselves with their own former condition - while being matched, in parallel, with other trainees in the getLife community to motivate and support each other through adversity.
+</p>
+</section>
+<hr/>
+<section id="research">
+<span class="section-number">01</span>
+<h2>Research</h2>
+<div class="subsection">
+<h3>Research &amp; Interviews</h3>
+<p>
+Research was conducted to define holistic wellbeing and explore current existing applications and tools. Interviews were conducted focused on people's history with injuries, stories about self-motivation, and experiences with wellness applications.
+</p>
+</div>
+<div class="subsection">
+<h3>Wellness Definition</h3>
+<p>
+Wellness refers to diverse and interconnected dimensions of physical, mental, and social well-being that extend beyond the traditional definition of health. It includes choices and activities aimed at achieving physical vitality, mental alacrity, social satisfaction, a sense of accomplishment, and personal fulfillment.
+</p>
+</div>
+<div class="subsection two-col">
+<div>
+<div class="stat-word">Physical Health</div>
+<ul class="plain">
+<li>Physical Activity</li>
+<li>Nutrition &amp; Diet</li>
+<li>Bad habits and their control</li>
+<li>Medical Care</li>
+<li>Rest &amp; Sleep</li>
+</ul>
+</div>
+<div>
+<div class="stat-word">Mental Health</div>
+<ul class="plain">
+<li>Cognitive well-being</li>
+<li>Behavioral well-being</li>
+<li>Emotional well-being</li>
+</ul>
+</div>
+<div>
+<div class="stat-word">Social Health</div>
+<ul class="plain">
+<li>Communication and Interaction</li>
+<li>Meaningful relationships</li>
+<li>Maintaining a good support network</li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h3>Existing Applications</h3>
+<p>
+Research on current existing applications was conducted to gather insights on recent trends. Applications studied include Charity Miles, Solos, Cove, Happy Not Perfect, BetterMe, Hado, QuasAR, Strava, MyCrew, Trekking Together, Help Steps, Relive, and more. Application mapping was carried out based on how each application contributes to the user's physical, mental, and social health.
+</p>
+<figure>
+<img alt="Application Mapping" class="thesis-image" src="static/page2/AppandHealth.jpg"/>
+<figcaption class="image-caption">
+
+Application Mapping of existing wellness applications across Physical, Mental and Social wellbeing.
+
+</figcaption>
+</figure>
+</div>
+</section>
+<hr/>
+<section>
+<span class="section-number">Interviews</span>
+<h2>Voices from the field</h2>
+
+<blockquote>
+"...I did not want my body to heal to a frozen state. Even though it was tough I tried to be active throughout my recovery days."
+<span class="attribution">M, USA, 25 - Active</span>
+</blockquote>
+<blockquote>
+"...the injury in my hand actually never recovered but I have gotten used to it now."
+<span class="attribution">F, Spain, 25 - Moderately Active</span>
+</blockquote>
+<blockquote>
+"...a little uneasy to use the interface while doing yoga. As it was difficult for my instructor also verbally explaining the correct position to me. Later I joined in-person classes."
+<span class="attribution">F, Italy, 22 - Moderately Active</span>
+</blockquote>
+<blockquote>
+"...though my ankle injury I was a little worried to go back to my volleyball practice even after my recovery, but I felt a sense of responsibility towards my teammates and I was missing the time playing with them. That encouraged me back to the court."
+<span class="attribution">F, Turkey, 22 - Sedentary</span>
+</blockquote>
+</section>
+<hr/>
+<section id="research-insights">
+<span class="section-number">Research Insights</span>
+<h2>What the research revealed</h2>
+
+<div class="subsection">
+<h3>Motivation</h3>
+<p>
+People with injuries motivate themselves differently based on their own capabilities and circumstances.
+</p>
+</div>
+<div class="subsection">
+<h3>Smoother Tech</h3>
+<p>
+Proper balance between use of the interface and the workout activity itself, is important.
+</p>
+</div>
+<div class="subsection">
+<h3>Individual Needs</h3>
+<p>
+There is a certain need for customized systems that can help users through their own individual injuries, towards their overall wellness.
+</p>
+</div>
+</section>
+<hr/>
+<section id="design-challenge">
+<span class="section-number">02</span>
+<h2>Design Challenge</h2>
+<p class="lead">
+How can we motivate and rehabilitate people after their experience with injuries, to get back on with their lives while sustaining their exercise habits?
+</p>
+</section>
+<hr/>
+<section id="solution">
+<span class="section-number">03</span>
+<h2>Solution</h2>
+<div class="solution-logo">
+    <img alt="getLife logo" class="solution-logo-img" src="static/page3/getLife_Logo.png"/>
+</div>
+<div class="subsection">
+<h3>Envisioned Solution</h3>
+<p>
+A hybrid platform for people with injuries, to motivate and rehabilitate themselves towards a better life - built using computer vision, a human coach, an AI Coach, and community support.
+</p>
+</div>
+<div class="subsection">
+<h3>Ecosystem Members</h3>
+<ul class="plain">
+<li>Users</li>
+<li>Physiotherapist / Human Coach</li>
+<li>AI Coach &amp; Mobile Application</li>
+<li>Computer Vision (Webcam / Camera / Heatmap Sensor)</li>
+</ul>
+</div>
+<div class="subsection">
+<h3>AI Exploration - How Pose Estimation Works</h3>
+<p>
+<strong>Phase 1</strong> - I. AI is fed with numerous exercise and body pose data (videos, images, etc.) for learning.
+</p>
+<figure>
+<img alt="AI Phase 1" class="thesis-image ai-image" src="static/page4/AIP1.png"/>
+<figcaption class="image-caption">
+AI learns from large datasets of body poses and exercises.
+</figcaption>
+</figure>
+<p>
+II. The AI process learns to understand and differentiate each body pose or workout movement.
+</p>
+<figure>
+<img alt="AI Phase 2" class="thesis-image ai-image" src="static/page4/AIP2.jpg"/>
+<figcaption class="image-caption">
+The AI model begins organizing pose data into structured movement patterns.
+</figcaption>
+</figure>
+
+<p>
+III. The system creates a reusable pose model for every movement and stores it for future use.
+</p>
+
+<figure>
+<img alt="AI Phase 3" class="thesis-image ai-image" src="static/page4/AIP3.jpg"/>
+<figcaption class="image-caption">
+Pose templates are refined and stored for future comparison.
+</figcaption>
+</figure>
+
+<hr/>
+<p>
+<strong>Phase 2</strong> - I. When someone performs a workout, AI creates a new body model from the detected joints.
+</p>
+<figure>
+<img alt="AI Phase 4" class="thesis-image ai-image" src="static/page4/AIP4.png"/>
+<figcaption class="image-caption">
+A new pose model is created during exercise.
+</figcaption>
+</figure>
+<p>
+II. The newly generated model is compared with the trained reference model.
+</p>
+<figure>
+<img alt="AI Phase 5" class="thesis-image ai-image" src="static/page4/AIP5.png"/>
+<figcaption class="image-caption">
+The current pose is compared with the trained dataset.
+</figcaption>
+</figure>
+<p>
+III. If both models match, the pose is considered correct. Otherwise, corrective feedback is provided.
+</p>
+<figure>
+<img alt="AI Phase 6" class="thesis-image ai-image" src="static/page4/AIP6.png"/>
+<figcaption class="image-caption">
+Real-time feedback guides users toward the correct posture.
+</figcaption>
+</figure>
+</div>
+</section>
+<hr>
+<section id="experience">
+<span class="section-number">04</span>
+<h2>The Experience</h2>
+<div class="step-block">
+<h3>Step 1 - Onboarding</h3>
+<p>
+Users align the details of their injuries/problems in the getLife application. Based on their choices they are scheduled with an online physiotherapist session, and receive a custom prescription based on their personal injuries and medical history.
+</p>
+<figure><img alt="Onboarding Journey" class="thesis-image" src="static/page5/EXP1.png"/><figcaption class="image-caption">Users align their injury details and begin the rehabilitation onboarding journey.</figcaption></figure></div>
+<div class="step-block">
+<h3>Step 2 - Physiotherapist Session</h3>
+<p>
+Following the physiotherapist's instructions, the trainee performs exercises already provided in the Technogym application. Their best repetitions are recorded and uploaded to getLife AI for processing.
+</p>
+<figure><img alt="Physiotherapist Session" class="thesis-image" src="static/page5/EXP2.png"/><figcaption class="image-caption">The physiotherapist session establishes the trainee's rehabilitation baseline.</figcaption></figure></div>
+<div class="step-block">
+<h3>Step 3 - Personal Training Session</h3>
+<p>
+While exercising, getLife AI checks the user's posture and compares it with the user's previous posture model. When the user reaches their best performance, the AI Coach guides and motivates them towards the professional coach's model.
+</p>
+<figure><img alt="Personal Training Session" class="thesis-image" src="static/page5/EXP3.png"/><figcaption class="image-caption">The AI Coach compares the user's current posture with their previous posture model.</figcaption></figure></div>
+<div class="step-block">
+<h3>Step 4 - Physiotherapist / Coach Talk Sessions</h3>
+<p>
+Users receive advice to improve workouts or resolve issues they are experiencing. These sessions provide more human interaction alongside the AI Coach.
+</p>
+<figure><img alt="Coach Talk Session" class="thesis-image" src="static/page5/EXP4.png"/><figcaption class="image-caption">Follow-up coach sessions support continued rehabilitation and human interaction.</figcaption></figure></div>
+</section>
+<hr/>
+<section id="prototype">
+<span class="section-number">05</span>
+<h2>Prototype</h2>
+<div class="subsection two-col">
+<div>
+<div class="stat-word">Back-end Development</div>
+<ul class="plain">
+<li>ml5.js</li>
+<li>p5.js</li>
+<li>Webcam</li>
+</ul>
+</div>
+<div>
+<div class="stat-word">Front-end Development</div>
+<ul class="plain">
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+</div>
+<div>
+<div class="stat-word">Visual Communication</div>
+<ul class="plain">
+<li>Figma</li>
+<li>Photoshop</li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h3>Development</h3>
+<p>
+Development of the prototype started with the idea of using Kinect functionalities to gather high-level body gesture data together with an interface capable of communicating analysed information in a simple and efficient manner.
+</p>
+<p>
+Interview insights showed that during physical activity users focus more on bodily functions than cognitive tasks. Therefore, exercise visualization had to remain extremely simple.
+</p>
+<p>
+Further exploration led to TensorFlow together with ml5.js for browser-based pose estimation and p5.js for rapid interface prototyping. The system tracked three body joints: left shoulder, right shoulder, and right elbow.
+</p>
+<p>
+Interactive elements such as a progress bar and skeleton width were added to communicate rehabilitation progress. The skeleton remained yellow during progress, gradually increasing in width as the user approached the target. Once the goal was achieved it turned green, visually reinforcing success and motivating continued rehabilitation.
+</p>
+<p>
+The complete prototype, tutorials, and website were finally deployed using GitHub Pages.
+</p>
+<p class="project-link-description">Experience the prototype at this link:</p>
+<p class="project-link"><a href="https://sohamdasdesigns.github.io/getLife/index.html" target="_blank" rel="noopener">getLife Trainer</a></p>
+<figure>
+<img alt="Prototype screen - skeleton overlay" class="thesis-image" src="static/tutorial_2.jpg"/>
+<figcaption class="image-caption">Figure I - getLife pose-tracking interface, built with ml5.js and p5.js.</figcaption>
+</figure>
+</div>
+<div class="subsection">
+<h3>Gamification - Drunk Flappy</h3>
+<p>
+The gamification module motivates users to continuously move their right hand. While playing and pursuing higher scores, shoulder rehabilitation continues naturally in the background.
+</p>
+<p class="project-link-description">Experience the prototype at this link:</p>
+<p class="project-link"><a href="https://sohamdasdesigns.github.io/getLifeFlappyBird/" target="_blank" rel="noopener">getLife Gamification : Drunk Flappy</a></p>
+<figure>
+<img alt="Drunk Flappy prototype" class="thesis-image" src="static/tutorial_flappy.png"/>
+<figcaption class="image-caption">Figure II - Gamification module encouraging continuous right-hand movement.</figcaption>
+</figure>
+</div>
+<div class="subsection">
+<h3>Summary - User Journey of getLife at a Glance</h3>
+<ul class="plain">
+<li>Rehabilitation Journey</li>
+
+
+<figure><img alt="User journey – summary1.jpg" class="thesis-image" src="static/page7/summary1.jpg"/><figcaption></figcaption></figure>
+<li>Motivation Journey</li>
+<figure><img alt="User journey – summary2.jpg" class="thesis-image" src="static/page7/summary2.jpg"/><figcaption></figcaption></figure>
+</ul>
+</div>
+</section>
+<hr/>
+<section id="bibliography">
+<span class="section-number">06</span>
+<h2>Bibliography</h2>
+<ul class="plain">
+<li><a href="https://www.researchgate.net/publication/278039848_Evaluation_of_Wellness_Determinants_and_Interventions_by_Citizen_Scientists" target="_blank" rel="noopener">Wellness Definition Paper</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/31872233/" target="_blank" rel="noopener">Categories of wellness</a></li>
+<li><a href="https://theworldbook.org/physical-health/" target="_blank" rel="noopener">Physical Health</a></li>
+<li><a href="https://www.mentalhealth.gov/basics/what-is-mental-health" target="_blank" rel="noopener">Mental Health</a></li>
+<li><a href="https://info.totalwellnesshealth.com/blog/what-is-social-health" target="_blank" rel="noopener">Social Health</a></li>
+<li><a href="https://cris-maillo.github.io/yogAI/" target="_blank" rel="noopener">Yoga AI</a></li>
+<li><a href="https://www.analyticsvidhya.com/blog/2021/09/posture-detection-using-posenet-with-real-time-deep-learning-project/" target="_blank" rel="noopener">PoseNet</a></li>
+<li><a href="https://ml5js.org/" target="_blank" rel="noopener">ml5.js</a> &amp; <a href="https://p5js.org/" target="_blank" rel="noopener">p5.js</a></li>
+<li><a href="https://thecodingtrain.com/learning/ml5/7.1-posenet.html" target="_blank" rel="noopener">The Coding Train Tutorials</a></li>
+</ul>
+</section>
+<hr/>
+<footer>
+<p>
+getLife - Master's Thesis Project<br/>
+Domus Academy Milano, February 2021
+</p>
+</footer>
+</main>
+<script>
+(function(){
+    const overlay=document.getElementById('imgZoomOverlay');
+    const zoomImg=document.getElementById('imgZoomImg');
+    const closeBtn=document.getElementById('imgZoomClose');
+    const images=document.querySelectorAll('img.thesis-image, img.ai-image');
+
+    function openZoom(event){
+        const src=event.currentTarget.src;
+        const alt=event.currentTarget.alt || '';
+        zoomImg.src=src;
+        zoomImg.alt=alt;
+        overlay.classList.add('visible');
+        overlay.setAttribute('aria-hidden','false');
+    }
+
+    function closeZoom(){
+        overlay.classList.remove('visible');
+        overlay.setAttribute('aria-hidden','true');
+        zoomImg.src='';
+    }
+
+    images.forEach(img=>{
+        img.style.cursor='zoom-in';
+        img.addEventListener('click',openZoom);
+    });
+
+    closeBtn.addEventListener('click',closeZoom);
+    overlay.addEventListener('click',function(event){
+        if(event.target===overlay){
+            closeZoom();
+        }
+    });
+    document.addEventListener('keydown',function(event){
+        if(event.key==='Escape'){
+            closeZoom();
+        }
+    });
+
+    const navLinks=document.querySelectorAll('.side-nav a');
+    const sections=[...navLinks].map(link=>document.querySelector(link.getAttribute('href')));
+
+    function updateActiveNav(){
+        const offset=window.innerHeight/3;
+        let activeIndex=0;
+        sections.forEach((section,index)=>{
+            if(section && section.getBoundingClientRect().top - offset <= 0){
+                activeIndex=index;
+            }
+        });
+        navLinks.forEach((link,index)=>{
+            if(index===activeIndex){
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll',updateActiveNav);
+    window.addEventListener('resize',updateActiveNav);
+    updateActiveNav();
+})();
+</script>
+</body>
+</html>
